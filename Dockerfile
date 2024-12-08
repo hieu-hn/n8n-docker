@@ -14,6 +14,8 @@ ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 
 # Ensure the permissions are correct for config folder
 RUN mkdir -p /home/node/.n8n && chmod 700 /home/node/.n8n
+RUN chmod 600 /home/node/.n8n/config
 
 # Start n8n
-CMD ["n8n"]
+CMD ["bash", "-c", "n8n"]
+
